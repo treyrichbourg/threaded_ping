@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # ping a list of host with threads for increase speed
 # use standard linux /bin/ping utility
 
@@ -43,7 +43,7 @@ def thread_pinger(i, q):
                 re.M | re.I,
             )
             ping_rtt = search.group(2)
-            out_q.put("OK " + str(ip) + " rtt= " + ping_rtt)
+            out_q.put(f"OK {ip} rtt= {ping_rtt}")
         else:
             out_q.put(f"DOWN {ip}")
 
